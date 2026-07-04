@@ -1,0 +1,45 @@
+/* PAULO SAT — Color tokens
+   Primary palette per brand brief: Azul, Azul Escuro, Amarelo, Branco.
+   Built in oklch for consistent lightness/chroma across the family. */
+
+:root {
+  /* ---- Primary: Blue ramp ---- */
+  --blue-900: oklch(28% 0.09 246);   /* azul escuro — deepest, hero backgrounds */
+  --blue-700: oklch(38% 0.11 246);   /* azul escuro — headings on white, solid panels */
+  --blue-500: oklch(52% 0.13 246);   /* azul — primary brand blue, links, icons */
+  --blue-300: oklch(75% 0.09 246);   /* azul claro — borders, secondary accents */
+  --blue-100: oklch(93% 0.03 246);   /* azul pálido — tinted surfaces, chips */
+  --blue-050: oklch(97% 0.015 246);  /* faintest wash — section backgrounds */
+
+  /* ---- Primary: Yellow ramp ---- */
+  --yellow-700: oklch(62% 0.15 92);  /* amarelo escuro — hover/active state */
+  --yellow-500: oklch(80% 0.16 96);  /* amarelo — CTA fills, highlights */
+  --yellow-300: oklch(90% 0.10 98);  /* amarelo claro — soft highlight fills */
+  --yellow-on:  #1A1A1A;             /* text placed on yellow needs dark ink, not white */
+
+  /* ---- Neutrals (warm-white, near-black ink) ---- */
+  --white:      #FFFFFF;
+  --ink:        oklch(24% 0.02 246); /* body copy, near-black with a whisper of blue */
+  --slate:      oklch(48% 0.02 246); /* secondary copy */
+  --line:       oklch(28% 0.09 246 / 12%); /* hairline borders, derived from blue-900 */
+
+  /* ---- Semantic aliases ---- */
+  --color-bg:            var(--white);
+  --color-bg-sunken:     var(--blue-050);
+  --color-surface:       var(--white);
+  --color-surface-tint:  var(--blue-100);
+  --color-text:          var(--ink);
+  --color-text-muted:    var(--slate);
+  --color-text-inverse:  var(--white);
+  --color-border:        var(--line);
+
+  --color-brand:         var(--blue-500);
+  --color-brand-deep:    var(--blue-900);
+  --color-brand-strong:  var(--blue-700);
+  --color-accent:        var(--yellow-500);
+  --color-accent-hover:  var(--yellow-700);
+  --color-accent-on:     var(--yellow-on);
+
+  --color-danger:        oklch(55% 0.16 30);
+  --color-success:       oklch(55% 0.13 150);
+}

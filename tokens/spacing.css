@@ -1,0 +1,25 @@
+/* PAULO SAT — Spacing, radius & shadow tokens */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+  --space-10: 76px;
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 20px 40px -22px oklch(28% 0.09 246 / 35%);
+  --shadow-cta:  0 12px 28px -10px oklch(62% 0.15 92 / 55%);
+  --shadow-nav:  0 1px 0 var(--line);
+
+  --container-max: 1120px;
+}

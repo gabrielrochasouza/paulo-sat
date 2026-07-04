@@ -1,0 +1,31 @@
+<!-- @dsCard group="Components" viewport="700x320" subtitle="Card, IconBadge, StatItem" name="Card, IconBadge & Stats" -->
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;padding:26px;font-family:var(--font-body);background:var(--white);box-sizing:border-box;}
+  .grid{display:flex;gap:16px;}
+  .card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:24px;flex:1;box-shadow:var(--shadow-card);}
+  .badge{width:44px;height:44px;border-radius:12px;background:var(--color-surface-tint);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  h3{font-family:var(--font-display);font-size:17px;margin:0 0 6px;color:var(--ink);}
+  p{font-size:14.5px;color:var(--slate);line-height:1.5;margin:0;}
+  .stats{display:flex;justify-content:space-between;margin-top:24px;padding-top:20px;border-top:1px solid var(--color-border);}
+  .stat{text-align:center;flex:1;}
+  .stat b{display:block;font-family:var(--font-display);font-size:26px;color:var(--blue-900);}
+  .stat span{font-size:13px;color:var(--slate);}
+</style>
+<div class="grid">
+  <div class="card">
+    <div class="badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#2E6FA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#2E6FA8" stroke-width="2"/></svg></div>
+    <h3>Técnico certificado</h3>
+    <p>Você não corre o risco de pagar duas vezes pelo mesmo serviço.</p>
+  </div>
+  <div class="card">
+    <div class="badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#2E6FA8" stroke-width="2"/><path d="M3 10h18" stroke="#2E6FA8" stroke-width="2"/></svg></div>
+    <h3>Principais receptores</h3>
+    <p>Century, Vivensys e SKY — cobre praticamente qualquer sistema.</p>
+  </div>
+</div>
+<div class="stats">
+  <div class="stat"><b>Sul Fluminense</b><span>região de atendimento</span></div>
+  <div class="stat"><b>SKY · OI · Claro</b><span>sistemas atendidos</span></div>
+  <div class="stat"><b>Cartão aceito</b><span>pagamento facilitado</span></div>
+</div>

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Spacing" viewport="700x180" subtitle="Radii used across cards, buttons, panels" name="Corner radii" -->
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:20px;font-family:var(--font-body);background:var(--white);box-sizing:border-box;}
+  .row{display:flex;gap:16px;align-items:center;}
+  .box{width:90px;height:90px;background:var(--blue-100);border:1.5px solid var(--blue-300);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-size:11px;color:var(--blue-700);}
+</style>
+<div class="row">
+  <div class="box" style="border-radius:var(--radius-sm)">sm 12</div>
+  <div class="box" style="border-radius:var(--radius-md)">md 16</div>
+  <div class="box" style="border-radius:var(--radius-lg)">lg 20</div>
+  <div class="box" style="border-radius:var(--radius-xl)">xl 28</div>
+  <div class="box" style="border-radius:var(--radius-pill);width:130px;">pill</div>
+</div>

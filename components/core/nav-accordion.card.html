@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" viewport="700x220" subtitle="Accordion open/closed, NavBar" name="Accordion & Nav" -->
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;padding:0;font-family:var(--font-body);background:var(--white);box-sizing:border-box;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(255,255,255,.85);border-bottom:1px solid var(--color-border);}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--blue-900);}
+  .cta{background:var(--color-accent);color:var(--color-accent-on);padding:9px 16px;border-radius:999px;font-weight:700;font-size:13.5px;text-decoration:none;}
+  .acc{max-width:640px;margin:20px auto 0;padding:0 20px;display:flex;flex-direction:column;gap:10px;}
+  .acc-item{border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;}
+  .acc-q{width:100%;text-align:left;background:none;border:none;padding:16px 18px;display:flex;justify-content:space-between;font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink);}
+  .plus{color:var(--yellow-700);font-size:18px;}
+  .acc-a{padding:0 18px 16px;font-size:14px;color:var(--slate);line-height:1.5;}
+</style>
+<div class="nav">
+  <div class="brand"><img src="../../assets/paulo-sat-mark.svg" width="26" height="26">PAULO SAT</div>
+  <a class="cta" href="#">Chamar no WhatsApp</a>
+</div>
+<div class="acc">
+  <div class="acc-item">
+    <div class="acc-q">Atende em quais cidades?<span class="plus">+</span></div>
+    <div class="acc-a">Atendemos toda a região Sul Fluminense do RJ.</div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-q">Quais formas de pagamento?<span class="plus" style="transform:rotate(45deg);display:inline-block;">+</span></div>
+  </div>
+</div>
