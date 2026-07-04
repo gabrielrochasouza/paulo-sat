@@ -3,49 +3,62 @@ import Head from 'next/head'
 
 export default function Home() {
   useEffect(() => {
-    // Scroll reveal
-    const revealTargets = document.querySelectorAll(
-      '.section-head, .pain-item, .benefit-card, .acc-item, .solution > div, .offer > div, .final-cta h2, .final-cta p, .final-cta .btn-primary, .stat'
-    );
-    revealTargets.forEach(el => el.classList.add('reveal'));
+    if (typeof window === 'undefined') return;
     
-    function staggerGroup(groupSelector, itemSelector, stepMs) {
-      document.querySelectorAll(groupSelector).forEach(group => {
-        group.querySelectorAll(itemSelector).forEach((el, i) => {
-          el.style.transitionDelay = (i * stepMs) + 'ms';
+    try {
+      // Scroll reveal
+      const revealTargets = document.querySelectorAll(
+        '.section-head, .pain-item, .benefit-card, .acc-item, .solution > div, .offer > div, .final-cta h2, .final-cta p, .final-cta .btn-primary, .stat'
+      );
+      revealTargets.forEach(el => el.classList.add('reveal'));
+      
+      function staggerGroup(groupSelector, itemSelector, stepMs) {
+        const groups = document.querySelectorAll(groupSelector);
+        groups.forEach(group => {
+          const items = group.querySelectorAll(itemSelector);
+          items.forEach((el, i) => {
+            el.style.transitionDelay = (i * stepMs) + 'ms';
+          });
         });
-      });
-    }
-    
-    staggerGroup('.pain-grid', '.pain-item', 55);
-    staggerGroup('.benefits', '.benefit-card', 65);
-    staggerGroup('.acc', '.acc-item', 45);
-    staggerGroup('.stats-inner', '.stat', 60);
-    
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle('reveal-visible', entry.isIntersecting);
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-    
-    revealTargets.forEach(el => revealObserver.observe(el));
+      }
+      
+      staggerGroup('.pain-grid', '.pain-item', 55);
+      staggerGroup('.benefits', '.benefit-card', 65);
+      staggerGroup('.acc', '.acc-item', 45);
+      staggerGroup('.stats-inner', '.stat', 60);
+      
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle('reveal-visible', entry.isIntersecting);
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+      
+      revealTargets.forEach(el => revealObserver.observe(el));
 
-    // Accordion
-    document.querySelectorAll('.acc-item').forEach(item => {
-      const q = item.querySelector('.acc-q');
-      const a = item.querySelector('.acc-a');
-      q.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.acc-item.open').forEach(o => {
-          o.classList.remove('open');
-          o.querySelector('.acc-a').style.maxHeight = null;
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          a.style.maxHeight = a.scrollHeight + 'px';
+      // Accordion
+      const accItems = document.querySelectorAll('.acc-item');
+      accItems.forEach(item => {
+        const q = item.querySelector('.acc-q');
+        const a = item.querySelector('.acc-a');
+        if (q && a) {
+          q.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            const openItems = document.querySelectorAll('.acc-item.open');
+            openItems.forEach(o => {
+              o.classList.remove('open');
+              const oAnswer = o.querySelector('.acc-a');
+              if (oAnswer) oAnswer.style.maxHeight = null;
+            });
+            if (!isOpen) {
+              item.classList.add('open');
+              a.style.maxHeight = a.scrollHeight + 'px';
+            }
+          });
         }
       });
-    });
+    } catch (error) {
+      console.error('Error initializing effects:', error);
+    }
   }, []);
 
   return (
@@ -53,7 +66,9 @@ export default function Home() {
       <Head>
         <title>PAULO SAT — Sinal de volta, sem complicação</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Instalação, mudança de endereço e apontamento de SKY, OI e Claro TV. Técnico certificado no Sul Fluminense - RJ" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
 

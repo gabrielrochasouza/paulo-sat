@@ -1,9 +1,7 @@
-/** Minimal Next.js config to allow static assets from /assets and default settings */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    unoptimized: true
-  }
+  swcMinify: true,
 }
 
 module.exports = nextConfig
